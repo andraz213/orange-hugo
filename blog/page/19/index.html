@@ -1,10 +1,8 @@
 <html>    
     <head>
-    <title>Orange Data Mining - Blog</title>
+    <title>Orange Data Mining - Blogs</title>
 
     
-    
-    <meta property="og:title" content="Blog">
     
     
     
@@ -116,11 +114,6 @@
 
                         
                         
-                            <li class="nav-item"><a id="menu_feature" href="/#Orange-Features">Features</a></li>                            
-                        
-                    
-                    
-                        
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/screenshots/">Screenshots</a></li>
                             
@@ -180,7 +173,8 @@
     <div id="main">
         <div class="container-fluid clear-top">
             
-<section id="features" class="features-blog section offset-header">
+
+      <section id="features" class="features-blog section offset-header">
     <div class="container">
         <div style="text-align: center">
             <h2 style="font-size: 34px;">
@@ -202,34 +196,34 @@
             <ul>
                 <span>Categories: </span>
                 
-                <li style="display: inline;"><a href="/categories/orange3"
+                <li style="display: inline;"><a href="/blog/orange3"
                         style="margin-top: 20px !important;">orange3</a></li>
                 
-                <li style="display: inline;"><a href="/categories/visualization"
+                <li style="display: inline;"><a href="/blog/visualization"
                         style="margin-top: 20px !important;">visualization</a></li>
                 
-                <li style="display: inline;"><a href="/categories/analysis"
+                <li style="display: inline;"><a href="/blog/analysis"
                         style="margin-top: 20px !important;">analysis</a></li>
                 
-                <li style="display: inline;"><a href="/categories/addons"
+                <li style="display: inline;"><a href="/blog/addons"
                         style="margin-top: 20px !important;">addons</a></li>
                 
-                <li style="display: inline;"><a href="/categories/workshop"
+                <li style="display: inline;"><a href="/blog/workshop"
                         style="margin-top: 20px !important;">workshop</a></li>
                 
-                <li style="display: inline;"><a href="/categories/education"
+                <li style="display: inline;"><a href="/blog/education"
                         style="margin-top: 20px !important;">education</a></li>
                 
-                <li style="display: inline;"><a href="/categories/classification"
+                <li style="display: inline;"><a href="/blog/classification"
                         style="margin-top: 20px !important;">classification</a></li>
                 
-                <li style="display: inline;"><a href="/categories/data"
+                <li style="display: inline;"><a href="/blog/data"
                         style="margin-top: 20px !important;">data</a></li>
                 
-                <li style="display: inline;"><a href="/categories/examples"
+                <li style="display: inline;"><a href="/blog/examples"
                         style="margin-top: 20px !important;">examples</a></li>
                 
-                <li style="display: inline;"><a href="/categories/gsoc"
+                <li style="display: inline;"><a href="/blog/gsoc"
                         style="margin-top: 20px !important;">gsoc</a></li>
                 
             </ul>
@@ -239,6 +233,91 @@
         <div id="post_nor">
             
             
+            <div class="row">
+                
+                        <div class='content col-md-12 col-xs-12 feature-description'>
+
+                            
+                            <p class="feature-text" style="margin-bottom:0 !important;font-size: 14px !important;">
+                                By: MARKO, Dec 20, 2011</p>
+                            <h2 class="workflow-title" style="margin-top: 10px !important">
+                                <a href="/blog/2011/12/20/orange-2-5-code-conversion/"> Orange 2.5: code conversion</a>
+                            </h2>
+                            <p class="feature-text">
+                                
+                                Orange 2.5 unifies Orange&rsquo;s C++ core and Python modules into a single module hierarchy. To use the new module hierarchy, import Orange instead of orange and accompanying orng* modules. While we will maintain backward compatibility in 2.* releases, we nevertheless suggest programmers to use the new interface. The provided conversion tool can help refactor your code to use the new interface.
+The conversion script, orange2to25.py, resides in Orange&rsquo;s main directory. To refactor accuracy8.
+                                
+
+                            </p>
+                            <div class="tags" style="padding-bottom: 10px;">
+                                Categories:
+                                
+                                <a class="tag-workflow" href="/blog/orange25">orange25</a>
+                                
+                            </div>
+                            <div class="getting-started-button">
+
+
+                                <a href="/blog/2011/12/20/orange-2-5-code-conversion/" class="no-break-buttons">
+                                    <div class="learn-more feature-block">
+
+                                        <div class="feature-block feature-link">Read More</div>
+                                        <div class="feature-block fa fa-arrow-circle-o-right jsonly"> </div>
+                                    </div>
+                                </a>
+                                &nbsp;&nbsp;
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <hr />
+                    
+            <div class="row">
+                
+                        <div class='content col-md-12 col-xs-12 feature-description'>
+
+                            
+                            <p class="feature-text" style="margin-bottom:0 !important;font-size: 14px !important;">
+                                By: BIOLAB, Dec 8, 2011</p>
+                            <h2 class="workflow-title" style="margin-top: 10px !important">
+                                <a href="/blog/2011/12/08/random-forest-switches-to-simple-tree-learner-by-default/"> Random forest switches to Simple tree learner by default</a>
+                            </h2>
+                            <p class="feature-text">
+                                
+                                Random forest classifiers now use Orange.classification.tree.SimpleTreeLearnerby default, which considerably shortens their construction times.
+Using a random forest classifier is easy.
+import Orange iris = Orange.data.Table('iris') forest = Orange.ensemble.forest.RandomForestLearner(iris, trees=200) for instance in iris: print forest(instance), instance.get_class()  The example above loads the iris dataset and trains a random forest classifier with 200 trees. The classifier is then used to label all training examples, printing its prediction alongside the actual class value.
+                                
+
+                            </p>
+                            <div class="tags" style="padding-bottom: 10px;">
+                                Categories:
+                                
+                                <a class="tag-workflow" href="/blog/forestlearner">forestlearner</a>
+                                
+                                <a class="tag-workflow" href="/blog/simpletreelearner">simpletreelearner</a>
+                                
+                            </div>
+                            <div class="getting-started-button">
+
+
+                                <a href="/blog/2011/12/08/random-forest-switches-to-simple-tree-learner-by-default/" class="no-break-buttons">
+                                    <div class="learn-more feature-block">
+
+                                        <div class="feature-block feature-link">Read More</div>
+                                        <div class="feature-block fa fa-arrow-circle-o-right jsonly"> </div>
+                                    </div>
+                                </a>
+                                &nbsp;&nbsp;
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <hr />
+                    
             <div class="row">
                 
                         <div class='content col-md-12 col-xs-12 feature-description'>
@@ -258,7 +337,7 @@
                             <div class="tags" style="padding-bottom: 10px;">
                                 Categories:
                                 
-                                <a class="tag-workflow" href="/categories/gsoc">gsoc</a>
+                                <a class="tag-workflow" href="/blog/gsoc">gsoc</a>
                                 
                             </div>
                             <div class="getting-started-button">
@@ -299,11 +378,11 @@ Practically, this means that now you can install them without manual compiling o
                             <div class="tags" style="padding-bottom: 10px;">
                                 Categories:
                                 
-                                <a class="tag-workflow" href="/categories/debian">debian</a>
+                                <a class="tag-workflow" href="/blog/debian">debian</a>
                                 
-                                <a class="tag-workflow" href="/categories/packaging">packaging</a>
+                                <a class="tag-workflow" href="/blog/packaging">packaging</a>
                                 
-                                <a class="tag-workflow" href="/categories/python">python</a>
+                                <a class="tag-workflow" href="/blog/python">python</a>
                                 
                             </div>
                             <div class="getting-started-button">
@@ -344,9 +423,9 @@ The library uses OpenGL 2/3: since Khronos deprecated parts of the old OpenGL AP
                             <div class="tags" style="padding-bottom: 10px;">
                                 Categories:
                                 
-                                <a class="tag-workflow" href="/categories/opengl">opengl</a>
+                                <a class="tag-workflow" href="/blog/opengl">opengl</a>
                                 
-                                <a class="tag-workflow" href="/categories/visualization">visualization</a>
+                                <a class="tag-workflow" href="/blog/visualization">visualization</a>
                                 
                             </div>
                             <div class="getting-started-button">
@@ -386,7 +465,7 @@ The library uses OpenGL 2/3: since Khronos deprecated parts of the old OpenGL AP
                             <div class="tags" style="padding-bottom: 10px;">
                                 Categories:
                                 
-                                <a class="tag-workflow" href="/categories/orange3">orange3</a>
+                                <a class="tag-workflow" href="/blog/orange3">orange3</a>
                                 
                             </div>
                             <div class="getting-started-button">
@@ -426,13 +505,13 @@ The library uses OpenGL 2/3: since Khronos deprecated parts of the old OpenGL AP
                             <div class="tags" style="padding-bottom: 10px;">
                                 Categories:
                                 
-                                <a class="tag-workflow" href="/categories/gsoc">gsoc</a>
+                                <a class="tag-workflow" href="/blog/gsoc">gsoc</a>
                                 
-                                <a class="tag-workflow" href="/categories/plot">plot</a>
+                                <a class="tag-workflow" href="/blog/plot">plot</a>
                                 
-                                <a class="tag-workflow" href="/categories/qt">qt</a>
+                                <a class="tag-workflow" href="/blog/qt">qt</a>
                                 
-                                <a class="tag-workflow" href="/categories/visualization">visualization</a>
+                                <a class="tag-workflow" href="/blog/visualization">visualization</a>
                                 
                             </div>
                             <div class="getting-started-button">
@@ -473,11 +552,11 @@ Multi-label classification methods are increasingly used by many applications, s
                             <div class="tags" style="padding-bottom: 10px;">
                                 Categories:
                                 
-                                <a class="tag-workflow" href="/categories/classification">classification</a>
+                                <a class="tag-workflow" href="/blog/classification">classification</a>
                                 
-                                <a class="tag-workflow" href="/categories/gsoc">gsoc</a>
+                                <a class="tag-workflow" href="/blog/gsoc">gsoc</a>
                                 
-                                <a class="tag-workflow" href="/categories/multilabel">multilabel</a>
+                                <a class="tag-workflow" href="/blog/multilabel">multilabel</a>
                                 
                             </div>
                             <div class="getting-started-button">
@@ -518,9 +597,9 @@ The MF works with numpy dense matrices and scipy sparse matrices (where this is 
                             <div class="tags" style="padding-bottom: 10px;">
                                 Categories:
                                 
-                                <a class="tag-workflow" href="/categories/gsoc">gsoc</a>
+                                <a class="tag-workflow" href="/blog/gsoc">gsoc</a>
                                 
-                                <a class="tag-workflow" href="/categories/matrixfactorization">matrixfactorization</a>
+                                <a class="tag-workflow" href="/blog/matrixfactorization">matrixfactorization</a>
                                 
                             </div>
                             <div class="getting-started-button">
@@ -561,103 +640,17 @@ The motivation behind developing a new tree induction algorithm from scratch was
                             <div class="tags" style="padding-bottom: 10px;">
                                 Categories:
                                 
-                                <a class="tag-workflow" href="/categories/classification">classification</a>
+                                <a class="tag-workflow" href="/blog/classification">classification</a>
                                 
-                                <a class="tag-workflow" href="/categories/regression">regression</a>
+                                <a class="tag-workflow" href="/blog/regression">regression</a>
                                 
-                                <a class="tag-workflow" href="/categories/tree">tree</a>
+                                <a class="tag-workflow" href="/blog/tree">tree</a>
                                 
                             </div>
                             <div class="getting-started-button">
 
 
                                 <a href="/blog/2011/08/24/faster-classification-and-regression-trees/" class="no-break-buttons">
-                                    <div class="learn-more feature-block">
-
-                                        <div class="feature-block feature-link">Read More</div>
-                                        <div class="feature-block fa fa-arrow-circle-o-right jsonly"> </div>
-                                    </div>
-                                </a>
-                                &nbsp;&nbsp;
-                            </div>
-
-                        </div>
-                        
-                    </div>
-                    <hr />
-                    
-            <div class="row">
-                
-                        <div class='content col-md-12 col-xs-12 feature-description'>
-
-                            
-                            <p class="feature-text" style="margin-bottom:0 !important;font-size: 14px !important;">
-                                By: MARKO, Aug 19, 2011</p>
-                            <h2 class="workflow-title" style="margin-top: 10px !important">
-                                <a href="/blog/2011/08/19/golden-sublime-triangles-in-orange/"> Golden (sublime) triangles in Orange</a>
-                            </h2>
-                            <p class="feature-text">
-                                
-                                Hand in hand with the development of the new visualization framework and the financial crisis we are putting some gold into Orange. The arrows at the ends of the axes are, as of today, small golden triangles. See the changes in owaxis.py!
-- path.moveTo(0, 3) - path.lineTo(0, -3) - path.lineTo(5, 0) + path.moveTo(0, 3.09) + path.lineTo(0, -3.09) + path.lineTo(9.51, 0)  
-                                
-
-                            </p>
-                            <div class="tags" style="padding-bottom: 10px;">
-                                Categories:
-                                
-                                <a class="tag-workflow" href="/categories/visualization">visualization</a>
-                                
-                            </div>
-                            <div class="getting-started-button">
-
-
-                                <a href="/blog/2011/08/19/golden-sublime-triangles-in-orange/" class="no-break-buttons">
-                                    <div class="learn-more feature-block">
-
-                                        <div class="feature-block feature-link">Read More</div>
-                                        <div class="feature-block fa fa-arrow-circle-o-right jsonly"> </div>
-                                    </div>
-                                </a>
-                                &nbsp;&nbsp;
-                            </div>
-
-                        </div>
-                        
-                    </div>
-                    <hr />
-                    
-            <div class="row">
-                
-                        <div class='content col-md-12 col-xs-12 feature-description'>
-
-                            
-                            <p class="feature-text" style="margin-bottom:0 !important;font-size: 14px !important;">
-                                By: MARKO, Aug 3, 2011</p>
-                            <h2 class="workflow-title" style="margin-top: 10px !important">
-                                <a href="/blog/2011/08/03/orange-at-ismbeccb-2011/"> Orange at ISMB/ECCB 2011</a>
-                            </h2>
-                            <p class="feature-text">
-                                
-                                We presented the Orange Bioinformatics add-on at the ISMB/ECCB conference in Vienna, a joined event covering both 19th Annual International Conference on Intelligent Systems for Molecular Biology and 10th European Conference on Computational Biology.
-We were giving out Orange stickers (with the URL) to the poster&rsquo;s visitors. There was some interest; in the end we gave out about 10 of them, mostly to biologists, who were excited to perform some of the analysis themselves.
-                                
-
-                            </p>
-                            <div class="tags" style="padding-bottom: 10px;">
-                                Categories:
-                                
-                                <a class="tag-workflow" href="/categories/bioinformatics">bioinformatics</a>
-                                
-                                <a class="tag-workflow" href="/categories/bioorange">bioorange</a>
-                                
-                                <a class="tag-workflow" href="/categories/conference">conference</a>
-                                
-                            </div>
-                            <div class="getting-started-button">
-
-
-                                <a href="/blog/2011/08/03/orange-at-ismbeccb-2011/" class="no-break-buttons">
                                     <div class="learn-more feature-block">
 
                                         <div class="feature-block feature-link">Read More</div>
@@ -794,10 +787,10 @@ We were giving out Orange stickers (with the URL) to the poster&rsquo;s visitors
         } else {
             var results = search(param);
             var search_results = document.getElementById('search-results')
-            
+
             $("#post_nor").hide();
             $("#search-results").show();
-            
+
             if (results.length < 1) {
                 search_results.innerHTML = '<div style="padding: 20px 15px"> No blog posts found. </div>';
             } else {
@@ -849,7 +842,7 @@ We were giving out Orange stickers (with the URL) to the poster&rsquo;s visitors
                         } else {
                             html_el += '<div class="content col-md-6 col-xs-12 image-containter ">';
                         }
-                
+
                         html_el += '<a href="' + results[page].uri + '"><img src="' + results[page].thumbImage +
                             '" class="workflow-image"></a>'
 
@@ -869,6 +862,8 @@ We were giving out Orange stickers (with the URL) to the poster&rsquo;s visitors
     var baseurl = "";
 </script>
 <script type="text/javascript" src="/js/search.js"></script>
+
+
 
         </div>
     </div>
@@ -923,7 +918,7 @@ We were giving out Orange stickers (with the URL) to the poster&rsquo;s visitors
                                 <li><div class="sitemap-cat">Documentation</div></li>
                                 <li><a class="sitemap-sub" href='/getting-started/'>Get started</a></li>
                                 <li><a class="sitemap-sub" href="/widget-catalog/">Widgets</a></li>
-                                <li><a class="sitemap-sub" href="http://docs.orange.biolab.si/3/data-mining-library/">Scripting</a></li>
+                                <li><a class="sitemap-sub" href="http://docs.biolab.si/3/data-mining-library/">Scripting</a></li>
                             </ul>
                         </div>
 
@@ -944,27 +939,27 @@ We were giving out Orange stickers (with the URL) to the poster&rsquo;s visitors
                             
                             <li>
                             <div class="row">
+                            <div class="col-md-2"><a class="sitemap-sub"> 11 Jan </a></div>
+                            <div class="col-md-10">
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-01-11-orange-in-classroom/">Orange in Classroom</a>
+                            </div>
+                            </div>
+                            </li>
+                            
+                            <li>
+                            <div class="row">
+                            <div class="col-md-2"><a class="sitemap-sub"> 21 Dec </a></div>
+                            <div class="col-md-10">
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-12-21-year-in-code/">2020 - Year in Code</a>
+                            </div>
+                            </div>
+                            </li>
+                            
+                            <li>
+                            <div class="row">
                             <div class="col-md-2"><a class="sitemap-sub"> 15 Oct </a></div>
                             <div class="col-md-10">
                                 <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-10-15-document-embedders/">How to identify fake news with document embeddings</a>
-                            </div>
-                            </div>
-                            </li>
-                            
-                            <li>
-                            <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 28 Sep </a></div>
-                            <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-09-28-text-tutorials/">New Video Tutorials on Text Mining</a>
-                            </div>
-                            </div>
-                            </li>
-                            
-                            <li>
-                            <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 27 Jul </a></div>
-                            <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-07-27-story-arcs/">Detecting Story Arcs with Orange</a>
                             </div>
                             </div>
                             </li>
