@@ -46,11 +46,11 @@
 
     </script>
 
-    
- 
+
+
 
     <script type="text/javascript" src="/plugins/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/plugins/jquery.form.js"></script> 
+    <script type="text/javascript" src="/plugins/jquery.form.js"></script>
     <script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
     
     <script type="text/javascript" src="/plugins/lightgallery/js/lightgallery.js"></script>
@@ -58,6 +58,8 @@
     <script type="text/javascript" src="/plugins/lightgallery/js/lg-video.js"></script>
     <script type="text/javascript" src="/plugins/lightgallery/js/lg-zoom.js"></script>
     <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/header_helpers.js"></script>
+
 
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -93,6 +95,7 @@
     </script>
 
 </head>
+
     <body>
 
      <header id="top" class="header navbar-fixed-top">
@@ -115,56 +118,89 @@
                     <ul class="nav navbar-nav">
 
                         
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/screenshots/">Screenshots</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/workflows/">Workflows</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/download/">Download</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/blog/">Blog</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/docs/">Docs</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/training/">Workshops</a></li>
                             
                         
+                      
                     
+
+                        
+                              <li class="input_search nav-item">
+                                <div class="header-search-input transform_header" hidden>
+                                  <input type="text" class="jsonly search-widget-workflow nav-item" id="search-header" style="margin-top: 8px" placeholder="Search" tabindex="1" onkeydown="check_key_header(event)" autofocus />
+                                </div>
+                              </li>
+                              <li class="">
+                                <div class="">
+
+                                <a class="btn header-search-button btn-warning big-button-base donate fa fa-search" id="searchBtn" role="button" onClick="header_search()">
+
+                                </a>
+                              </div>
+                              </li>
+                        
                     
+
+                        
                         
                             
                         <li class="">
+                          <div class="donate-button transform_header donate_div" hidden>
                             <a class="btn btn-warning big-button-base donate" id="header-donate-link" role="button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=A76TAX87ZVR3J">Donate</a>
+                          </div>
                         </li>
                             
                         
-                    
+                      
                     
                     </ul>
                 </div>
@@ -452,6 +488,13 @@
                         <li style="list-style-type: none; ">
                       <a href="/widget-catalog/visualize/boxplot">
                       <div class="reference internal" style="cursor: pointer;" >Box Plot</div>
+                      </a>
+                  </li>
+                  
+                        
+                        <li style="list-style-type: none; ">
+                      <a href="/widget-catalog/visualize/violinplot">
+                      <div class="reference internal" style="cursor: pointer;" >Violin Plot</div>
                       </a>
                   </li>
                   
@@ -952,11 +995,15 @@
                   </li>
                   
                         
+                  
+                        
                         <li style="list-style-type: none; ">
                       <a href="/widget-catalog/spectroscopy/reshape-map">
                       <div class="reference internal" style="cursor: pointer;" >Reshape Map</div>
                       </a>
                   </li>
+                  
+                        
                   
                         
                   
@@ -1682,16 +1729,32 @@
 <ul>
 <li>Data: dataset with edited domain</li>
 </ul>
-<p>This widget can be used to edit/change a dataset&rsquo;s domain.</p>
+<p>This widget can be used to edit/change a dataset&rsquo;s domain - rename features, rename or merge values of categorical features, add a categorical value, and assign labels.</p>
 <p><img src="../images/EditDomain-stamped.png" alt=""></p>
 <ol>
 <li>All features (including meta attributes) from the input dataset are listed in the <em>Variables</em> list. Selecting one feature displays an editor on the right.</li>
+<li>Editing options:
+<ul>
 <li>Change the name of the feature.</li>
-<li>Change the value names for discrete features in the <em>Values</em> list box. Double-click to edit the name. To reorder the values (for example to display them in <a href="../../visualize/distributions/">Distributions</a>, use the up and down keys at the bottom of the box. To add or remove a value, use + and - buttons.</li>
-<li>Additional feature annotations can be added, removed or edited in the <em>Labels</em> box. Add a new label with the + button and add the <em>Key</em> and <em>Value</em> for the new entry. Key will be displayed in the top left corner of the <a href="../../data/datatable/">Data Table</a>, while values will appear below the specified column. Remove an existing label with the - button.</li>
-<li>To revert the changes made to the selected feature, press the <em>Reset Selected</em> button while the feature is selected in the <em>Variables</em> list. Pressing <em>Reset All</em> will remove all the changes to the domain.</li>
-<li>Press <em>Apply</em> to send the new domain to the output.</li>
+<li>Change the type of the feature. For example, convert a string variable to categorical.</li>
+<li><em>Unlink variable from its source variable</em>. This option removes existing computation for a variable (say for Cluster how clustering was computed), making it &lsquo;plain&rsquo;. This enables merging variables with same names in <a href="../../data/mergedata/">Merge Data</a>.</li>
+<li>Change the value names for discrete features in the <em>Values</em> list box. Double-click to edit the name.</li>
+<li>Add, remove or edit additional feature annotations in the <em>Labels</em> box. Add a new label with the + button and add the <em>Key</em> and <em>Value</em> for the new entry. Key will be displayed in the top left corner of the <a href="../../data/datatable/">Data Table</a>, while values will appear below the specified column. Remove an existing label with the - button.</li>
+</ul>
+</li>
+<li>Reorder or merge values of categorical features. To reorder the values (for example, to display them in <a href="../../visualize/distributions/">Distributions</a>, use the up and down keys at the bottom of the box. To add or remove a value, use + and - buttons. Select two or more variables and click = to merge them into a single value. Use the M button to merge variables on condition.</li>
+<li>Rename the output table. Useful for displaying table names in <a href="../../visualize/venndiagram/">Venn Diagram</a>.</li>
+<li>To revert the changes made to the selected feature, press the <em>Reset Selected</em> button while the feature is selected in the <em>Variables</em> list. Pressing <em>Reset All</em> will remove all the changes to the domain. Press <em>Apply</em> to send the new domain to the output.</li>
 </ol>
+<p><strong>Merging options</strong></p>
+<p><img src="../images/EditDomain-merge.png" alt=""></p>
+<ul>
+<li><em>Group selected values</em>: selected cateogorical values become a single variable.</li>
+<li><em>Group values with less than N occurrences</em>: values which appear less than N times in the data, will be grouped into a single value.</li>
+<li><em>Group values with less than % occurrences</em>: values which appear less then X % of the time in the data, will be grouped into a single value.</li>
+<li><em>Group all except N most frequent values</em>: all values but the N most frequent will be grouped into a single variable.</li>
+<li><em>New value name</em>: the name of the grouped value.</li>
+</ul>
 <h2 id="example">Example</h2>
 <p>Below, we demonstrate how to simply edit an existing domain. We selected the <em>heart_disease.tab</em> dataset and edited the <em>gender</em> attribute. Where in the original we had the values <em>female</em> and <em>male</em>, we changed it into <em>F</em> for female and <em>M</em> for male. Then we used the down key to switch the order of the variables. Finally, we added a label to mark that the attribute is binary. We can observe the edited data in the <a href="../../data/datatable/">Data Table</a> widget.</p>
 <p><img src="../images/EditDomain-Example.png" alt=""></p>
@@ -1834,27 +1897,27 @@
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 11 Jan </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 05 Mar </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-01-11-orange-in-classroom/">Orange in Classroom</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-03-05-overfitting-course/">Hands-On Training About Overfitting</a>
                             </div>
                             </div>
                             </li>
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 21 Dec </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 10 Feb </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-12-21-year-in-code/">2020 - Year in Code</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-02-10-explaining-models/">Explaining Predictive Models</a>
                             </div>
                             </div>
                             </li>
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 15 Oct </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 27 Jan </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-10-15-document-embedders/">How to identify fake news with document embeddings</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-01-27-word-distribution/">Observing Word Distribution</a>
                             </div>
                             </div>
                             </li>

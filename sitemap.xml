@@ -244,12 +244,82 @@
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/education/</loc>
-    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2021/2021-03-05-overfitting-course/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/machine-learning/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/teaching/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/explain/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/explainable-AI/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2021/2021-02-10-explaining-models/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/model-explanation/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/predictive-modelling/</loc>
+    <lastmod>2021-02-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/bar-plot/</loc>
+    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2021/2021-01-27-word-distribution/</loc>
+    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/text-mining/</loc>
+    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/word-cloud/</loc>
+    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/word-distribution/</loc>
+    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -258,17 +328,7 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2021/2021-01-11-orange-in-classroom/</loc>
-    <lastmod>2021-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/teaching/</loc>
     <lastmod>2021-01-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -314,11 +374,6 @@
   
   <url>
     <loc>/blog/2020/2020-10-15-document-embedders/</loc>
-    <lastmod>2020-10-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/text-mining/</loc>
     <lastmod>2020-10-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -2860,6 +2915,10 @@
   </url>
   
   <url>
+    <loc>/search/</loc>
+  </url>
+  
+  <url>
     <loc>/widget-catalog/time-series/seasonal_adjustment/</loc>
   </url>
   
@@ -3029,6 +3088,10 @@
   
   <url>
     <loc>/widget-catalog/visualize/venndiagram/</loc>
+  </url>
+  
+  <url>
+    <loc>/widget-catalog/visualize/violinplot/</loc>
   </url>
   
   <url>

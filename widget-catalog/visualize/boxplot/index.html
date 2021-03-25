@@ -46,11 +46,11 @@
 
     </script>
 
-    
- 
+
+
 
     <script type="text/javascript" src="/plugins/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/plugins/jquery.form.js"></script> 
+    <script type="text/javascript" src="/plugins/jquery.form.js"></script>
     <script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
     
     <script type="text/javascript" src="/plugins/lightgallery/js/lightgallery.js"></script>
@@ -58,6 +58,8 @@
     <script type="text/javascript" src="/plugins/lightgallery/js/lg-video.js"></script>
     <script type="text/javascript" src="/plugins/lightgallery/js/lg-zoom.js"></script>
     <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/header_helpers.js"></script>
+
 
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -93,6 +95,7 @@
     </script>
 
 </head>
+
     <body>
 
      <header id="top" class="header navbar-fixed-top">
@@ -115,56 +118,89 @@
                     <ul class="nav navbar-nav">
 
                         
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/screenshots/">Screenshots</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/workflows/">Workflows</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/download/">Download</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/blog/">Blog</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/docs/">Docs</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/training/">Workshops</a></li>
                             
                         
+                      
                     
+
+                        
+                              <li class="input_search nav-item">
+                                <div class="header-search-input transform_header" hidden>
+                                  <input type="text" class="jsonly search-widget-workflow nav-item" id="search-header" style="margin-top: 8px" placeholder="Search" tabindex="1" onkeydown="check_key_header(event)" autofocus />
+                                </div>
+                              </li>
+                              <li class="">
+                                <div class="">
+
+                                <a class="btn header-search-button btn-warning big-button-base donate fa fa-search" id="searchBtn" role="button" onClick="header_search()">
+
+                                </a>
+                              </div>
+                              </li>
+                        
                     
+
+                        
                         
                             
                         <li class="">
+                          <div class="donate-button transform_header donate_div" hidden>
                             <a class="btn btn-warning big-button-base donate" id="header-donate-link" role="button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=A76TAX87ZVR3J">Donate</a>
+                          </div>
                         </li>
                             
                         
-                    
+                      
                     
                     </ul>
                 </div>
@@ -452,6 +488,13 @@
                         <li style="list-style-type: none; ">
                       <a href="/widget-catalog/visualize/boxplot">
                       <div class="reference internal" style="cursor: pointer;" >Box Plot</div>
+                      </a>
+                  </li>
+                  
+                        
+                        <li style="list-style-type: none; ">
+                      <a href="/widget-catalog/visualize/violinplot">
+                      <div class="reference internal" style="cursor: pointer;" >Violin Plot</div>
                       </a>
                   </li>
                   
@@ -952,11 +995,15 @@
                   </li>
                   
                         
+                  
+                        
                         <li style="list-style-type: none; ">
                       <a href="/widget-catalog/spectroscopy/reshape-map">
                       <div class="reference internal" style="cursor: pointer;" >Reshape Map</div>
                       </a>
                   </li>
+                  
+                        
                   
                         
                   
@@ -1683,26 +1730,30 @@
 <li>Selected Data: instances selected from the plot</li>
 <li>Data: data with an additional column showing whether a point is selected</li>
 </ul>
-<p>The <strong>Box Plot</strong> widget shows the distributions of attribute values. It is a good practice to check any new data with this widget to quickly discover any anomalies, such as duplicated values (e.g. gray and grey), outliers, and alike.</p>
-<p><img src="../images/BoxPlot-Continuous-stamped.png" alt=""></p>
+<p>The <strong>Box Plot</strong> widget shows the distributions of attribute values. It is a good practice to check any new data with this widget to quickly discover any anomalies, such as duplicated values (e.g., gray and grey), outliers, and alike. Bars can be selected - for example, values for categorical data or the quantile range for numeric data.</p>
+<p><img src="../images/BoxPlot-Continuous.png" alt=""></p>
 <ol>
-<li>Select the variable you want to plot. Tick <em>Order by relevance</em> to order variables by Chi2 or ANOVA over the selected subgroup.</li>
-<li>Choose <em>Subgroups</em> to see <a href="https://en.wikipedia.org/wiki/Box_plot">box plots</a> displayed by a discrete subgroup.</li>
-<li>When instances are grouped by a subgroup, you can change the display mode. Annotated boxes will display the end values, the mean and the median, while compare medians and compare means will, naturally, compare the selected value between subgroups.
+<li>Select the variable you want to plot. Tick <em>Order by relevance to subgroups</em> to order variables by Chi2 or ANOVA over the selected subgroup.</li>
+<li>Choose <em>Subgroups</em> to see <a href="https://en.wikipedia.org/wiki/Box_plot">box plots</a> displayed by a discrete subgroup. Tick <em>Order by relevance to variable</em> to order subgroups by Chi2 or ANOVA over the selected variable.</li>
+<li>When instances are grouped by a subgroup, you can change the display mode. Annotated boxes will display the end values, the mean and the median, while comparing medians and compare means will, naturally, compare the selected value between subgroups.
 <img src="../images/BoxPlot-Continuous-small.png" alt="continuous"></li>
 <li>The mean (the dark blue vertical line). The thin blue line represents the <a href="http://mathworld.wolfram.com/StandardDeviation.html">standard deviation</a>.</li>
-<li>Values of the first (25%) and the third (75%) quantile. The blue  highlighted area represents the values between the first and the third quartile.</li>
+<li>Values of the first (25%) and the third (75%) quantile. The blue highlighted area represents the values between the first and the third quartile.</li>
 <li>The median (yellow vertical line).</li>
-<li>If <em>Send automatically</em> is ticked, changes are communicated automatically. Alternatively, press <em>Send</em>.</li>
-<li>Access help, save image or produce a report.</li>
 </ol>
-<p>For discrete attributes, the bars represent the number of instances with each particular attribute value. The plot shows the number of different animal types in the <em>Zoo</em> dataset: there are 41 mammals, 13 fish, 20 birds and so on.</p>
+<p>For discrete attributes, the bars represent the number of instances with each particular attribute value. The plot shows the number of different animal types in the <em>Zoo</em> dataset: there are 41 mammals, 13 fish, 20 birds, and so on.</p>
+<p>Display shows:</p>
+<ul>
+<li><em>Stretch bars</em>: Shows relative values (proportions) of data instances. The unticked box shows absolute values.</li>
+<li><em>Show box labels</em>: Display discrete values above each bar.</li>
+<li><em>Sort by subgroup frequencies</em>: Sort subgroups by their descending frequency.</li>
+</ul>
 <p><img src="../images/BoxPlot-Discrete.png" alt=""></p>
-<h2 id="example">Example</h2>
+<h2 id="examples">Examples</h2>
 <p>The <strong>Box Plot</strong> widget is most commonly used immediately after the <a href="../../data/file/">File</a> widget to observe the statistical properties of a dataset. In the first example, we have used <em>heart-disease</em> data to inspect our variables.</p>
 <p><img src="../images/BoxPlot-Example1.png" alt=""></p>
-<p><strong>Box Plot</strong> is also useful for finding the properties of a specific dataset, for instance a set of instances manually defined in another widget (e.g. <a href="../visualize/scatterplot.md">Scatter Plot</a> or instances belonging to some cluster or a classification tree node. Let us now use <em>zoo</em> data and create a typical clustering workflow with <a href="../unsupervised/distances.md">Distances</a> and <a href="../../unsupervised/hierarchicalclustering/">Hierarchical Clustering</a>.</p>
-<p>Now define the threshold for cluster selection (click on the ruler at the top). Connect <strong>Box Plot</strong> to <strong>Hierarchical Clustering</strong>, tick <em>Order by relevance</em> and select <em>Cluster</em> as a subgroup. This will order attributes by how well they define the selected subgroup, in our case a cluster. Seems like our clusters indeed correspond very well with the animal type!</p>
+<p><strong>Box Plot</strong> is also useful for finding the properties of a specific dataset, for instance, a set of instances manually defined in another widget (e.g. <a href="../visualize/scatterplot.md">Scatter Plot</a> or instances belonging to some cluster or a classification tree node. Let us now use <em>zoo</em> data and create a typical clustering workflow with <a href="../unsupervised/distances.md">Distances</a> and <a href="../../unsupervised/hierarchicalclustering/">Hierarchical Clustering</a>.</p>
+<p>Now define the threshold for cluster selection (click on the ruler at the top). Connect <strong>Box Plot</strong> to <strong>Hierarchical Clustering</strong>, tick <em>Order by relevance</em>, and select <em>Cluster</em> as a subgroup. This will order attributes by how well they define the selected subgroup, in our case, a cluster. It seems like our clusters indeed correspond very well with the animal type!</p>
 <p><img src="../images/BoxPlot-Example2.png" alt=""></p>
 
                 </div>
@@ -1843,27 +1894,27 @@
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 11 Jan </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 05 Mar </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-01-11-orange-in-classroom/">Orange in Classroom</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-03-05-overfitting-course/">Hands-On Training About Overfitting</a>
                             </div>
                             </div>
                             </li>
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 21 Dec </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 10 Feb </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-12-21-year-in-code/">2020 - Year in Code</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-02-10-explaining-models/">Explaining Predictive Models</a>
                             </div>
                             </div>
                             </li>
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 15 Oct </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 27 Jan </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-10-15-document-embedders/">How to identify fake news with document embeddings</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-01-27-word-distribution/">Observing Word Distribution</a>
                             </div>
                             </div>
                             </li>

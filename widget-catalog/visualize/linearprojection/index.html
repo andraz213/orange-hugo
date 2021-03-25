@@ -46,11 +46,11 @@
 
     </script>
 
-    
- 
+
+
 
     <script type="text/javascript" src="/plugins/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/plugins/jquery.form.js"></script> 
+    <script type="text/javascript" src="/plugins/jquery.form.js"></script>
     <script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
     
     <script type="text/javascript" src="/plugins/lightgallery/js/lightgallery.js"></script>
@@ -58,6 +58,8 @@
     <script type="text/javascript" src="/plugins/lightgallery/js/lg-video.js"></script>
     <script type="text/javascript" src="/plugins/lightgallery/js/lg-zoom.js"></script>
     <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/header_helpers.js"></script>
+
 
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -93,6 +95,7 @@
     </script>
 
 </head>
+
     <body>
 
      <header id="top" class="header navbar-fixed-top">
@@ -115,56 +118,89 @@
                     <ul class="nav navbar-nav">
 
                         
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/screenshots/">Screenshots</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/workflows/">Workflows</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/download/">Download</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/blog/">Blog</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/docs/">Docs</a></li>
                             
                         
+                      
                     
-                    
+
+                        
                         
                             
                             <li class="nav-item"><a id="header-screenshots-link"  href="/training/">Workshops</a></li>
                             
                         
+                      
                     
+
+                        
+                              <li class="input_search nav-item">
+                                <div class="header-search-input transform_header" hidden>
+                                  <input type="text" class="jsonly search-widget-workflow nav-item" id="search-header" style="margin-top: 8px" placeholder="Search" tabindex="1" onkeydown="check_key_header(event)" autofocus />
+                                </div>
+                              </li>
+                              <li class="">
+                                <div class="">
+
+                                <a class="btn header-search-button btn-warning big-button-base donate fa fa-search" id="searchBtn" role="button" onClick="header_search()">
+
+                                </a>
+                              </div>
+                              </li>
+                        
                     
+
+                        
                         
                             
                         <li class="">
+                          <div class="donate-button transform_header donate_div" hidden>
                             <a class="btn btn-warning big-button-base donate" id="header-donate-link" role="button" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=A76TAX87ZVR3J">Donate</a>
+                          </div>
                         </li>
                             
                         
-                    
+                      
                     
                     </ul>
                 </div>
@@ -452,6 +488,13 @@
                         <li style="list-style-type: none; ">
                       <a href="/widget-catalog/visualize/boxplot">
                       <div class="reference internal" style="cursor: pointer;" >Box Plot</div>
+                      </a>
+                  </li>
+                  
+                        
+                        <li style="list-style-type: none; ">
+                      <a href="/widget-catalog/visualize/violinplot">
+                      <div class="reference internal" style="cursor: pointer;" >Violin Plot</div>
                       </a>
                   </li>
                   
@@ -952,11 +995,15 @@
                   </li>
                   
                         
+                  
+                        
                         <li style="list-style-type: none; ">
                       <a href="/widget-catalog/spectroscopy/reshape-map">
                       <div class="reference internal" style="cursor: pointer;" >Reshape Map</div>
                       </a>
                   </li>
+                  
+                        
                   
                         
                   
@@ -1686,32 +1733,44 @@
 <li>Data: data with an additional column showing whether a point is selected</li>
 <li>Components: projection vectors</li>
 </ul>
-<p>This widget displays <a href="https://en.wikipedia.org/wiki/Projection_(linear_algebra)">linear projections</a> of class-labeled data. It supports various types of projections such as circular, <a href="https://en.wikipedia.org/wiki/Linear_discriminant_analysis">linear discriminant analysis</a>, <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principal component analysis</a>, and custom projection.</p>
+<p>This widget displays <a href="https://en.wikipedia.org/wiki/Projection_(linear_algebra)">linear projections</a> of class-labeled data. It supports various types of projections such as circular, <a href="https://en.wikipedia.org/wiki/Linear_discriminant_analysis">linear discriminant analysis</a>, and <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principal component analysis</a>.</p>
 <p>Consider, for a start, a projection of the <em>Iris</em> dataset shown below. Notice that it is the sepal width and sepal length that already separate <em>Iris setosa</em> from the other two, while the petal length is the attribute best separating <em>Iris versicolor</em> from <em>Iris virginica</em>.</p>
-<p><img src="../images/linear-projection-stamped.png" alt=""></p>
+<p><img src="../images/LinearProjection-stamped.png" alt=""></p>
 <ol>
-<li>Axes in the projection that are displayed and other available axes.</li>
-<li>Optimize your projection by using <strong>Suggest Features</strong>. This feature scores attributes by average classification accuracy and returns the top scoring attributes with a simultaneous visualization update.</li>
-<li>Choose the type of projection.</li>
-<li>Axes inside a circle are hidden. Circle radius can be be changed using a slider.</li>
-<li>Adjust <em>plot properties</em>:
+<li>Axes in the projection that are displayed and other available axes. Optimize your projection by using <strong>Suggest Features</strong>. This feature scores attributes and returns the top scoring attributes with a simultaneous visualization update. Feature scoring computes the classification accuracy (for classification) or MSE (regression) of k-nearest neighbors classifier on the projected, two-dimensional data. The score reflects how well the classes in the projection are separated.</li>
+<li>Choose the type of projection:
 <ul>
-<li>Set <a href="https://en.wikipedia.org/wiki/Jitter">jittering</a> to prevent the dots from overlapping (especially for discrete attributes).</li>
+<li>Circular Placement</li>
+<li><a href="https://en.wikipedia.org/wiki/Linear_discriminant_analysis">Linear Discriminant Analysis</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Principal Component Analysis</a></li>
+</ul>
+</li>
+<li>Set the color of the displayed points. Set shape, size, and label to differentiate between points.
+<em>Label only selected points</em> labels only selected data instances.</li>
+<li>Adjust plot properties:
+<ul>
+<li><em>Symbol size</em>: set the size of the points.</li>
+<li><em>Opacity</em>: set the transparency of the points.</li>
+<li><em>Jittering</em>: Randomly disperse points with <a href="https://en.wikipedia.org/wiki/Jitter">jittering</a> to prevent them from overlapping.</li>
+<li><em>Hide radius</em>: Axes inside the radius are hidden. Drag the slider to change the radius.</li>
+</ul>
+</li>
+<li>Additional plot properties:
+<ul>
+<li><em>Show color regions</em> colors the graph by class.</li>
 <li><em>Show legend</em> displays a legend on the right. Click and drag the legend to move it.</li>
-<li><em>Show class density</em> colors the graph by class (see the screenshot below).</li>
-<li><em>Label only selected points</em> allows you to select individual data instances and label them.</li>
 </ul>
 </li>
 <li><em>Select, zoom, pan</em> and <em>zoom to fit</em> are the options for exploring the graph. Manual selection of data instances works as an angular/square selection tool. Double click to move the projection. Scroll in or out for zoom.</li>
 <li>If <em>Send automatically</em> is ticked, changes are communicated automatically. Alternatively, press <em>Send</em>.</li>
-<li><em>Save Image</em> saves the created image to your computer in a .svg or .png format. Produce a report.</li>
 </ol>
 <h2 id="example">Example</h2>
 <p>The <strong>Linear Projection</strong> widget works just like other visualization widgets. Below, we connected it to the <a href="../data/file.md">File</a> widget to see the set projected on a 2-D plane. Then we selected the data for further analysis and connected it to the <a href="../../data/datatable/">Data Table</a> widget to see the details of the selected subset.</p>
-<p><img src="../images/LinearProjection-example.png" alt=""></p>
+<p><img src="../images/LinearProjection-Example.png" alt=""></p>
 <h2 id="references">References</h2>
 <p>Koren Y., Carmel L. (2003). Visualization of labeled data using linear transformations. In Proceedings of IEEE Information Visualization 2003, (InfoVis'03). Available <a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=3DDF0DB68D8AB9949820A19B0344C1F3?doi=10.1.1.13.8657&amp;rep=rep1&amp;type=pdf">here</a>.</p>
 <p>Boulesteix A.-L., Strimmer K. (2006). Partial least squares: a versatile tool for the analysis of high-dimensional genomic data. Briefings in Bioinformatics, 8(1), 32-44. Abstract <a href="http://bib.oxfordjournals.org/content/8/1/32.abstract">here</a>.</p>
+<p>Leban G., Zupan B., Vidmar G., Bratko I. (2006). VizRank: Data Visualization Guided by Machine Learning. Data Mining and Knowledge Discovery, 13, 119-136. Available <a href="http://eprints.fri.uni-lj.si/210/2/1._G._Leban%2C_B._Zupan%2C_G._Vidmar%2C_I._Bratko%2C_Data_Mining_and_Knowledge_Discovery_13%2C_119-36_(2006)..pdf">here</a>.</p>
 
                 </div>
             </div>
@@ -1851,27 +1910,27 @@
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 11 Jan </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 05 Mar </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-01-11-orange-in-classroom/">Orange in Classroom</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-03-05-overfitting-course/">Hands-On Training About Overfitting</a>
                             </div>
                             </div>
                             </li>
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 21 Dec </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 10 Feb </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-12-21-year-in-code/">2020 - Year in Code</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-02-10-explaining-models/">Explaining Predictive Models</a>
                             </div>
                             </div>
                             </li>
                             
                             <li>
                             <div class="row">
-                            <div class="col-md-2"><a class="sitemap-sub"> 15 Oct </a></div>
+                            <div class="col-md-2"><a class="sitemap-sub"> 27 Jan </a></div>
                             <div class="col-md-10">
-                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2020/2020-10-15-document-embedders/">How to identify fake news with document embeddings</a>
+                                <a class="sitemap-sub" style="color: #f79211" href="/blog/2021/2021-01-27-word-distribution/">Observing Word Distribution</a>
                             </div>
                             </div>
                             </li>

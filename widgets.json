@@ -246,7 +246,8 @@
     "category": "Data",
     "keywords": [
      "file",
-     "program"
+     "program",
+     "function"
     ],
     "background": "#FFD39F",
     "icon": "widget-icons/Data-Python Script.png",
@@ -297,7 +298,10 @@
    {
     "title": "Feature Constructor",
     "category": "Data",
-    "keywords": [],
+    "keywords": [
+     "function",
+     "lambda"
+    ],
     "background": "#FFD39F",
     "icon": "widget-icons/Data-Feature Constructor.png",
     "url": "featureconstructor"
@@ -362,6 +366,17 @@
     "background": "#FFB7B1",
     "icon": "widget-icons/Visualize-Box Plot.png",
     "url": "boxplot"
+   },
+   {
+    "title": "Violin Plot",
+    "category": "Visualize",
+    "keywords": [
+     "kernel",
+     "density"
+    ],
+    "background": "#FFB7B1",
+    "icon": "widget-icons/Visualize-Violin Plot.png",
+    "url": "violinplot"
    },
    {
     "title": "Distributions",
@@ -902,7 +917,11 @@
    {
     "title": "Spectra",
     "category": "Spectroscopy",
-    "keywords": [],
+    "keywords": [
+     "curves",
+     "lines",
+     "spectrum"
+    ],
     "background": "light-blue",
     "icon": "widget-icons/Spectroscopy-Spectra.png",
     "url": "spectra"
@@ -910,7 +929,12 @@
    {
     "title": "HyperSpectra",
     "category": "Spectroscopy",
-    "keywords": [],
+    "keywords": [
+     "image",
+     "spectral",
+     "chemical",
+     "imaging"
+    ],
     "background": "light-blue",
     "icon": "widget-icons/Spectroscopy-HyperSpectra.png",
     "url": "hyperspectra"
@@ -949,7 +973,11 @@
    {
     "title": "Multifile",
     "category": "Spectroscopy",
-    "keywords": [],
+    "keywords": [
+     "file",
+     "files",
+     "multiple"
+    ],
     "background": "light-blue",
     "icon": "widget-icons/Spectroscopy-Multifile.png",
     "url": "multifile"
@@ -986,12 +1014,28 @@
     "url": "interferogram-to-spectrum"
    },
    {
+    "title": "PLS",
+    "category": "Spectroscopy",
+    "keywords": [
+     "partial least squares"
+    ],
+    "background": "light-blue",
+    "icon": "widget-icons/Spectroscopy-PLS.png"
+   },
+   {
     "title": "Reshape Map",
     "category": "Spectroscopy",
     "keywords": [],
     "background": "light-blue",
     "icon": "widget-icons/Spectroscopy-Reshape Map.png",
     "url": "reshape-map"
+   },
+   {
+    "title": "SNR",
+    "category": "Spectroscopy",
+    "keywords": [],
+    "background": "light-blue",
+    "icon": "widget-icons/Spectroscopy-SNR.png"
    },
    {
     "title": "Align Stack",
